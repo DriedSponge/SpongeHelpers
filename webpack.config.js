@@ -14,6 +14,9 @@ module.exports = {
     resolve: {
         extensions: [ '.tsx', '.ts', '.js' ],
     },
+    optimization: {
+        minimize: true,
+    },
     output: {
         filename: 'SpongeHelpers.js',
         path: path.resolve(__dirname, 'dist'),
