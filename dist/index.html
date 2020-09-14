@@ -21,6 +21,9 @@
             $("#goblue").click(function (){
                 $("h1").css('color',"blue");
             })
+            $("#getattr").click(function (){
+                alert("The button type is: "+$("#getattr").attr("type"))
+            })
         });
         $("#clickme").on("click", function (){
             alert("Clicked");
@@ -36,6 +39,8 @@
     </form>
     <br>
     <button id="goblue" type="button">Set h1 to blue</button>
+    <br>
+    <button id="getattr"  type="button">Get the "type" attribute of this button</button>
 
 </body>
 </html>
