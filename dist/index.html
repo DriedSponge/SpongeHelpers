@@ -13,11 +13,19 @@
     <script>
         $(()=>{
             console.log("Document Ready");
+            $("form").submit(function (e){
+                e.preventDefault();
+                console.log($("#submittest").val())
+            })
         });
         $("h1").on("click", function (){
             console.log("test");
         });
 
     </script>
+    <form id="form" >
+        <input id="submittest" type="text">
+        <button type="submit">Test Submit Event</button>
+    </form>
 </body>
 </html>
