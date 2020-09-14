@@ -9,19 +9,22 @@
 </head>
 <body>
     <script src="SpongeHelpers.js"></script>
-    <h1>JS Test</h1>
+    <h1 id="clickme">Click Me</h1>
+    <h1 id="clickme2">Click Me 2</h1>
     <script>
         $(()=>{
             console.log("Document Ready");
             $("form").submit(function (e){
                 e.preventDefault();
-                console.log($("#submittest").val())
+                alert($("#submittest").val())
             })
         });
-        $("h1").on("click", function (){
-            console.log("test");
+        $("#clickme").on("click", function (){
+            alert("Clicked");
         });
-
+        $("#clickme2").click(function (){
+            alert("Clicked but with differnet handler")
+        })
     </script>
     <form id="form" >
         <input id="submittest" type="text">
