@@ -12,9 +12,12 @@
     <h1>JS Test</h1>
     <script>
         $(()=>{
-            $("h1").hide();
-            console.log("Test");
+            console.log("Document Ready");
         });
+        $("h1").on("click", function (){
+            console.log("test");
+        });
+
     </script>
 </body>
 </html>
