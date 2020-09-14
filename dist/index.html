@@ -18,17 +18,24 @@
                 e.preventDefault();
                 alert($("#submittest").val())
             })
+            $("#goblue").click(function (){
+                $("h1").css('color',"blue");
+            })
         });
         $("#clickme").on("click", function (){
             alert("Clicked");
         });
         $("#clickme2").click(function (){
-            alert("Clicked but with differnet handler")
+            alert("Clicked but with different function")
         })
+
     </script>
     <form id="form" >
         <input id="submittest" type="text">
         <button type="submit">Test Submit Event</button>
     </form>
+    <br>
+    <button id="goblue" type="button">Set h1 to blue</button>
+
 </body>
 </html>
