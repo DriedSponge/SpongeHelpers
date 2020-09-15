@@ -11,9 +11,16 @@
     <script src="SpongeHelpers.js"></script>
     <h1 id="clickme">Click Me</h1>
     <h1 id="clickme2">Click Me 2</h1>
+    <style>
+        .test{
+            background-color: black;
+        }
+    </style>
     <script>
         $(()=>{
             console.log("Document Ready");
+            $("#goblue").addClass("test");
+
             $("form").submit(function (e){
                 e.preventDefault();
                 alert($("#submittest").val())
