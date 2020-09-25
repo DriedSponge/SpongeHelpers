@@ -1,6 +1,6 @@
 {
-  "name": "spongehelpers",
-  "version": "1.0.1",
+  "name": "sponge-helpers",
+  "version": "1.1.0",
   "description": "",
   "main": "./dist/SpongeHelpers.js",
   "scripts": {
