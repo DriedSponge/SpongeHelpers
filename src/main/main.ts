@@ -2,7 +2,6 @@ window['$'] = (...args) => {
     if (typeof args[0] === 'function') {
         // documwdnt ready listener
         const readyFn = args[0];
-        console.log("Document loaded")
         document.addEventListener('DOMContentLoaded', readyFn);
     }else if (typeof args[0] === 'string'){
         //select an element!
