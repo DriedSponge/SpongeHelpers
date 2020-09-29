@@ -1,7 +1,7 @@
 import {col} from "../main/main";
 
-col.prototype.val = (arg) => {
-    const element = col.prototype.this[0];
+col.val = (arg) => {
+    const element = col.this[0];
     if (typeof arg === 'string') {
         element.value = arg;
     } else {

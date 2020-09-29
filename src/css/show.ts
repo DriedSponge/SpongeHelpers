@@ -1,7 +1,8 @@
 import {col} from "../main/main";
 
-col.prototype.show = () => {
-    col.prototype.this.forEach((element) => {
+var show = () => {
+    col.this.forEach((element) => {
         element.style.display = ' ';
     })
 }
+col.show = show;

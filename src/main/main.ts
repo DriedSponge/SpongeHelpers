@@ -8,17 +8,18 @@ window['$'] = (...args) => {
         //select an element!
         const selector = args[0];
         //DecorateCollection(collection);
-        return col.apply(document.querySelectorAll(selector));
+        return mcol.apply(document.querySelectorAll(selector));
     }else if (args[0] instanceof HTMLElement){
         // The given element is a HTML object so we need to select it
         //const collection = [args[0]];
         //DecorateCollection(collection);
-        return col.apply([args[0]]);
+        return mcol.apply([args[0]]);
     }
 };
-export const col = function(){
-    col.prototype.queue = [];
-    col.prototype.delayed = false;
-    col.prototype.this = this;
-    return col.prototype;
+var mcol = function(){
+    mcol.prototype.queue = [];
+    mcol.prototype.delayed = false;
+    mcol.prototype.this = this;
+    return mcol.prototype;
 };
+export const col = mcol.prototype;
