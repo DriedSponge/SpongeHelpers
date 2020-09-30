@@ -19,25 +19,26 @@
     <script>
         $(()=>{
             console.log("Document Ready");
-            $("#goblue").addClass(['test','test3','test2']).addClass(['test5','test7','test4']);
-
-            $("form").submit(function (e){
-                e.preventDefault();
-                alert($("#submittest").val())
-            })
-            $('html').keyDown(function (){
-                alert("test")
-            })
-            $("#getattr").click(function (){
-                alert("The button type is: "+$("#getattr").attr("type"))
-            })
+            $("h1").html("test");
+            // $("#goblue").addClass(['test','test3','test2']).addClass(['test5','test7','test4']);
+            //
+            // $("form").submit(function (e){
+            //     e.preventDefault();
+            //     alert($("#submittest").val())
+            // })
+            // $('html').keyDown(function (){
+            //     alert("test")
+            // })
+            // $("#getattr").click(function (){
+            //     alert("The button type is: "+$("#getattr").attr("type"))
+            // })
         });
-        $("#clickme").on("click", function (){
-            alert("Clicked");
-        });
-        $("#clickme2").click(function (){
-            alert("Clicked but with different function")
-        })
+        // $("#clickme").on("click", function (){
+        //     alert("Clicked");
+        // });
+        // $("#clickme2").click(function (){
+        //     alert("Clicked but with different function")
+        // })
 
     </script>
     <form id="form" >
