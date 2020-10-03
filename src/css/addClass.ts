@@ -1,16 +1,21 @@
-import {col} from "../main/main";
-
-col.addClass = (...args) => {
-    if(typeof args[0] === 'string'){
-        col.this.forEach((element) => {
-            element.classList.add(args[0]);
+import {SpongeHelpers} from "../main/main";
+declare module "../main/main"{
+    export interface SpongeHelpers{
+        addClass(classes:string | Array<string>): SpongeHelpers;
+    }
+}
+var addClass = function addClass(classes){
+    if(typeof classes === 'string'){
+        this.selected.forEach((element) => {
+            element.classList.add(classes);
         })
-    }else if(args[0] instanceof Array){
-        args[0].forEach((cls) => {
-            col.this.forEach((element) => {
+    }else if(classes instanceof Array){
+        classes.forEach((cls) => {
+            this.selected.forEach((element) => {
                 element.classList.add(cls);
             })
         })
     }
-    return col;
+    return this;
 }
+SpongeHelpers.prototype.addClass = addClass;

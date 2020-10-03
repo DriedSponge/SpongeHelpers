@@ -1,16 +1,21 @@
-import {col} from "../main/main";
-
-col.removeClass = (...args) => {
-    if(typeof args[0] === 'string') {
-        col.this.forEach((element) => {
-            element.classList.remove(args[0]);
+import {SpongeHelpers} from "../main/main";
+declare module "../main/main"{
+    export interface SpongeHelpers{
+        removeClass(classes:string | Array<string>): SpongeHelpers;
+    }
+}
+var removeClass = function removeClass(classes){
+    if(typeof classes === 'string'){
+        this.selected.forEach((element) => {
+            element.classList.remove(classes);
         })
-    }else{
-        args[0].forEach((cls) => {
-            col.this.forEach((element) => {
+    }else if(classes instanceof Array){
+        classes.forEach((cls) => {
+            this.selected.forEach((element) => {
                 element.classList.remove(cls);
             })
         })
     }
-    return col;
+    return this;
 }
+SpongeHelpers.prototype.removeClass = removeClass;

@@ -1,21 +1,22 @@
-class SpongeHelpers{
+export class SpongeHelpers{
+    public this: this;
+    public selected:any;
+    test(arg){
+        console.log(arg);
+    }
     constructor(sel) {
         if (!sel) return;
         if (typeof sel === 'function') {
-            const readyFn = sel;
-            document.addEventListener('DOMContentLoaded', readyFn);
+            document.addEventListener('DOMContentLoaded', sel);
         }else if (typeof sel === 'string') {
-            return parseCollection.apply(document.querySelectorAll(sel));
-        }
-
+            this.selected = document.querySelectorAll(sel);
+        }else if (sel instanceof HTMLElement){
+            this.selected = sel;
+         }
     }
     init(sel){
-        return new SpongeHelpers (sel)
+        return new SpongeHelpers(sel);
     }
 }
-window['$'] = SpongeHelpers.prototype.init;
-var parseCollection = function(){
-    parseCollection.prototype.this = this;
-    return parseCollection.prototype;
-};
-export const col = parseCollection.prototype;
+var sh;
+window['$'] = sh = SpongeHelpers.prototype.init;

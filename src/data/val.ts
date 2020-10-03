@@ -1,10 +1,16 @@
-import {col} from "../main/main";
-
-col.val = (arg) => {
-    const element = col.this[0];
-    if (typeof arg === 'string') {
-        element.value = arg;
+import {SpongeHelpers} from "../main/main";
+declare module "../main/main"{
+    export interface SpongeHelpers{
+        val(value?:string): SpongeHelpers;
+    }
+}
+const val = function (value?:string){
+    const element = this.selected[0];
+    if (typeof value === 'string') {
+        element.value = value;
+        return this;
     } else {
         return element.value;
     }
 }
+SpongeHelpers.prototype.val = val;

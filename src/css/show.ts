@@ -1,8 +1,13 @@
-import {col} from "../main/main";
-
-var show = () => {
-    col.this.forEach((element) => {
+import {SpongeHelpers} from "../main/main";
+declare module "../main/main"{
+    export interface SpongeHelpers{
+        show(): SpongeHelpers;
+    }
+}
+var show = function (){
+    this.selected.forEach((element) => {
         element.style.display = ' ';
     })
+    return this;
 }
-col.show = show;
+SpongeHelpers.prototype.show = show;

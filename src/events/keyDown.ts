@@ -1,9 +1,12 @@
-import {col} from "../main/main";
-
-var keyDown = (downFunc) => {
-    col.this.forEach((element) => {
+import {SpongeHelpers} from "../main/main";
+declare module "../main/main"{
+    export interface SpongeHelpers{
+        keyDown(downFunc: Function): void;
+    }
+}
+var keyDown = function (downFunc: Function){
+    this.selected.forEach((element) => {
         element.addEventListener('keydown', downFunc);
     });
 };
-
-col.keyDown = keyDown;
+SpongeHelpers.prototype.keyDown = keyDown;

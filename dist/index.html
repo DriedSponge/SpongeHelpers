@@ -9,7 +9,7 @@
 </head>
 <body>
     <script src="SpongeHelpers.js"></script>
-    <h1 id="clickme">Click Me</h1>
+    <h1 test1="test1val" test2="test2val" id="clickme">Click Me</h1>
     <h1 id="clickme2">Click Me 2</h1>
     <style>
         .test{
@@ -17,9 +17,11 @@
         }
     </style>
     <script>
+        //console.log($("h1"))
         $(()=>{
             console.log("Document Ready");
-            $("h1").html("test");
+            $("h1").html("Test").html("Test3").attr({test:"test"});
+            console.log($('h1').attr("test","test2"))
             // $("#goblue").addClass(['test','test3','test2']).addClass(['test5','test7','test4']);
             //
             // $("form").submit(function (e){
@@ -50,7 +52,7 @@
     <br>
     <button id="getattr"  type="button">Get the "type" attribute of this button</button>
     <br>
-    <button onclick="$('h1').html('Changed html')"  type="button">Click here to modify html</button>
+    <button onclick="$('h1').css({color:'blue'})"  type="button">Click here to modify html</button>
 
 </body>
 </html>
