@@ -16,14 +16,19 @@
             background-color: black;
         }
     </style>
+
     <script>
-        //console.log($("h1"))
+
         $(()=>{
-            console.log("Document Ready");
+            $('input').click(function (e) {
+                e.preventDefault()
+                let name = $(this).data('name');
+                let group = $(this).data('group');
+                let second = $(this).data('second');
+                console.log(second);
+
+            })
             $("h1").html("Test").html("Test3").attr({test:"test"});
-            console.log($('h1').attr("test","test2"))
-            console.log($('h1').data("test","fart"))
-            console.log($('h1').data("test"))
             // $("#goblue").addClass(['test','test3','test2']).addClass(['test5','test7','test4']);
             //
             // $("form").submit(function (e){
@@ -46,7 +51,7 @@
 
     </script>
     <form id="form" >
-        <input id="submittest" type="text">
+        <input data-second="secibd" id="submittest" type="text">
         <button type="submit">Test Submit Event</button>
     </form>
     <br>

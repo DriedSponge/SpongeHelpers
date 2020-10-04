@@ -11,7 +11,7 @@ export class SpongeHelpers{
         }else if (typeof sel === 'string') {
             this.selected = document.querySelectorAll(sel);
         }else if (sel instanceof HTMLElement){
-            this.selected = sel;
+            this.selected = [sel];
          }
     }
     init(sel){

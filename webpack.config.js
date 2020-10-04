@@ -15,7 +15,7 @@ module.exports = {
         extensions: [ '.tsx', '.ts', '.js' ],
     },
     optimization: {
-        minimize: true,
+        minimize: false,
     },
     output: {
         filename: 'SpongeHelpers.js',
