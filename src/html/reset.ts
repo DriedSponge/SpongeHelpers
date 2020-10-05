@@ -1,10 +1,10 @@
 import {SpongeHelpers} from "../main/main"
 declare module "../main/main"{
     export interface SpongeHelpers{
-        reset(): SpongeHelpers;
+        formReset(): SpongeHelpers;
     }
 }
-const reset = function(){
+const formReset = function(){
     this.selected.forEach((element) => {
         if(element.tagName === "form"){
             element.reset();
@@ -12,6 +12,6 @@ const reset = function(){
     })
     return this;
 }
-SpongeHelpers.prototype.reset = reset;
+SpongeHelpers.prototype.formReset = formReset;
 
 
