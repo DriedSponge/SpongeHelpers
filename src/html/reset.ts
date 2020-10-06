@@ -6,7 +6,7 @@ declare module "../main/main"{
 }
 const formReset = function(){
     this.selected.forEach((element) => {
-        if(element.tagName === "form"){
+        if(element.tagName ==="FORM"){
             element.reset();
         }
     })
