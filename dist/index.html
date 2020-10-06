@@ -20,12 +20,15 @@
     <script>
 
         $(()=>{
+            $("h1").hide();
             $('input').click(function (e) {
                 e.preventDefault()
                 let name = $(this).data('name');
                 let group = $(this).data('group');
                 let second = $(this).data('second');
                 console.log(second);
+                $("h1").show();
+
 
             })
             $("h1").html("Test").html("Test3").attr({test:"test"});

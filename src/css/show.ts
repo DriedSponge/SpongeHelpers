@@ -6,7 +6,7 @@ declare module "../main/main"{
 }
 var show = function (){
     this.selected.forEach((element) => {
-        element.style.display = ' ';
+        element.style.display = '';
     })
     return this;
 }
