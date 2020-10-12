@@ -20,7 +20,7 @@
     <script>
 
         $(()=>{
-            $('input').click(function (e) {
+            $('#submittest').click(function (e) {
                 e.preventDefault()
                 let name = $(this).data('name');
                 let group = $(this).data('group');
@@ -60,6 +60,15 @@
     <button id="getattr"  type="button">Get the "type" attribute of this button</button>
     <br>
     <button onclick="$('h1').css({color:'blue'})"  type="button">Click here to modify html</button>
-
+    <br>
+    <label for="cb">test</label>
+    <input type="checkbox" value="test" id="cb">
+    <script>
+        $(()=>{
+            console.log($("#cb").check())
+            $("#cb").check(true)
+            console.log($("#cb").check())
+        })
+    </script>
 </body>
 </html>
