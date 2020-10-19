@@ -1,17 +1,17 @@
 import {SpongeHelpers} from "../main/main";
 declare module "../main/main"{
     export interface SpongeHelpers{
-        check(value?:boolean): SpongeHelpers | boolean;
+        disabled(value?:boolean): SpongeHelpers | boolean;
     }
 }
-const check = function (value?:boolean){
+const disabled = function (value?:boolean){
     if (typeof value === 'boolean') {
         this.selected.forEach((elm)=>{
-            elm.checked = value;
+            elm.disabled = value;
         })
         return this;
     } else {
-        return this.selected[0].checked;
+        return this.selected[0].disabled;
     }
 }
-SpongeHelpers.prototype.check = check;
+SpongeHelpers.prototype.disabled = disabled;
