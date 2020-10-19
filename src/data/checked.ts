@@ -1,10 +1,10 @@
 import {SpongeHelpers} from "../main/main";
 declare module "../main/main"{
     export interface SpongeHelpers{
-        check(value?:boolean): SpongeHelpers | boolean;
+        checked(value?:boolean): SpongeHelpers | boolean;
     }
 }
-const check = function (value?:boolean){
+const checked = function (value?:boolean){
     if (typeof value === 'boolean') {
         this.selected.forEach((elm)=>{
             elm.checked = value;
@@ -14,4 +14,4 @@ const check = function (value?:boolean){
         return this.selected[0].checked;
     }
 }
-SpongeHelpers.prototype.check = check;
+SpongeHelpers.prototype.checked = checked;
