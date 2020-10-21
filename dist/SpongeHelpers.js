@@ -2202,7 +2202,10 @@ var formInit = function (args) {
             args['loading'](true);
         }
         else if (elm.classList.contains("auto-loading")) {
-            elm.classList.add("loading-cover");
+            var loader = document.createElement("div");
+            loader.innerHTML = "Loading";
+            loader.classList.add('loading-cover');
+            elm.appendChild(loader);
         }
         console.log("%cLoading...", "color:lime;font-size:14px");
         var ce = document.getElementById(elm.id).querySelectorAll("*");
@@ -2229,7 +2232,7 @@ var formInit = function (args) {
                 args['loading'](false);
             }
             else if (elm.classList.contains("auto-loading")) {
-                elm.classList.remove("loading-cover");
+                elm.removeChild(loader);
             }
             console.log("%cLoading Complete", "color:lime;font-size:14px");
             args['callback'](response);

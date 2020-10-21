@@ -27,11 +27,7 @@
             })
         });
     </script>
-    <form id="form" class="d-none">
-        <input data-second="secibd" id="submittest" type="text">
-        <button type="submit">Test Submit Event</button>
-        <button type="button" onclick="console.log($('#form').formReset().hide())">TestResety</button>
-    </form>
+
     <br>
     <button id="goblue" type="button">Set h1 to blue</button>
     <br>
@@ -47,7 +43,7 @@
     <br>
 
     <div class="container">
-        <form  id="testform" class="auto-loading" action="http://127.0.0.1:8000/api/test/post" method="post">
+        <form style="position: relative" id="testform" class="auto-loading" action="http://127.0.0.1:8000/api/test/post" method="post">
             <input name="name">
             <input name="name2">
             <input name="name3">

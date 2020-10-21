@@ -14,7 +14,10 @@ var formInit = function (args:Array<any>){
         if(args['loading']!=undefined){
             args['loading'](true);
         }else if(elm.classList.contains("auto-loading")){
-            elm.classList.add("loading-cover")
+            var loader = document.createElement("div");
+            loader.innerHTML = "Loading"
+            loader.classList.add('loading-cover');
+            elm.appendChild(loader)
         }
         console.log("%cLoading...","color:lime;font-size:14px")
         let ce = document.getElementById(elm.id).querySelectorAll("*");
@@ -39,7 +42,7 @@ var formInit = function (args:Array<any>){
             if(args['loading']!=undefined){
                 args['loading'](false);
             }else if(elm.classList.contains("auto-loading")){
-                elm.classList.remove("loading-cover")
+                elm.removeChild(loader)
             }
             console.log("%cLoading Complete","color:lime;font-size:14px")
             args['callback'](response);
