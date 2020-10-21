@@ -1,0 +1,22 @@
+.loading-wrapper{
+  background-color: rgba(0, 0, 0, 0.7);
+  position: relative;
+  z-index: 1000;
+  border: 1px solid red;
+}
+.loading-wrapper .loader{
+  z-index: 101;
+}
+form.loading-cover::after{
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+form.loading-cover{
+  position: relative;
+}
