@@ -105,7 +105,10 @@ var formInit = function (args:Array<any>){
             }else{
                 args['callback'](response);
             }
-        });
+        })
+        .catch(function (e){
+            return error(e);
+         });
     });
 };
 SpongeHelpers.prototype.formInit = formInit;

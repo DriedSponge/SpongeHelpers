@@ -70,8 +70,11 @@
                         enabled:true,
                         fullScreen:false, //Should the loader cover the entire screen?
                         destroyLoader:false, // Should we destroy it after the load is complete?
-                        theme:"loading-cover-light"
+                        theme:"loading-cover-dark"
                     },
+                    error:function (data){
+                       alert("This is how we override the default error alert");
+                    }
                 });
             })
         </script>
