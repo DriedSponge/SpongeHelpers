@@ -16,21 +16,28 @@ var formInit = function (args:Array<any>){
         if(args['loading']!=null){
             args['loading'](true);
         }
+        //What to do if we want a loader
         if(args['loader']['enabled']){
+
+            //Generate the loader
             var loader = document.createElement("div");
             loader.innerHTML = "<div class='loader'></div>"
+            //If the loader theme is not set give it the default dark theme
             if(args['loader']['theme'] == null){
                 loader.classList.add('loading-cover-dark');
             }else{
                 loader.classList.add(args['loader']['theme']);
             }
             loader.classList.add('status');
+
+            //If the loader is full screen append it to the body, otherwise added it to the form
             if(args['loader']['fullScreen']){
                 let body = document.querySelectorAll('body')[0];
                 body.appendChild(loader)
-            }else if(elm.classList.contains("auto-loading")){
+            }else{
                 elm.appendChild(loader)
             }
+
         }
 
         //What happens when we call the error function
