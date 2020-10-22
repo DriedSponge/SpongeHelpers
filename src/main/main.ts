@@ -20,3 +20,4 @@ export class SpongeHelpers{
 }
 var sh;
 window['$'] = sh = SpongeHelpers.prototype.init;
+export var ErrorFormat = "color:red;font-size:14px";
