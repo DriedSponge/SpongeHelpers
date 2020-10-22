@@ -26,14 +26,3 @@ $loading-themes: ("dark": rgba(0, 0, 0, 0.7), "light": rgba(255, 255, 255, 0.7))
     z-index: 500;
   }
 }
-.success-content{
-  display: none;
-}
-form.auto-loading > div.success-cover .success-content{
-  display: inline-block;
-  overflow:auto;
-
-}
-form.auto-loading{
-  position: relative;
-}

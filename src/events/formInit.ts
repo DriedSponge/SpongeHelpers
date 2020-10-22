@@ -30,11 +30,12 @@ var formInit = function (args:Array<any>){
             }
             loader.classList.add('status');
 
-            //If the loader is full screen append it to the body, otherwise added it to the form
+            //If the loader is full screen append it to the body, otherwise added it to the form and make the form pos relative
             if(args['loader']['fullScreen']){
                 let body = document.querySelectorAll('body')[0];
                 body.appendChild(loader)
             }else{
+                elm.style.position = "relative";
                 elm.appendChild(loader)
             }
 
