@@ -64,13 +64,13 @@
                 $('#testform').formInit({
                     callback: function (data,loader) {
                         console.log(data);
-                        $(loader).addClass("success-cover").html($('#testform .success-content').html())
+                        //$(loader).addClass("success-cover").html($('#testform .success-content').html())
                     },
                     loader: {
-                        enabled:true,
+                        enabled:true,      //Do we want to generate a loader?
                         fullScreen:false, //Should the loader cover the entire screen?
-                        destroyLoader:false, // Should we destroy it after the load is complete?
-                        theme:"loading-cover-dark"
+                        destroyLoader:true, // Should we destroy it after the load is complete?
+                        theme:"loading-cover-dark" //Loader bg theme
                     },
                     error:function (data){
                        alert("This is how we override the default error alert");

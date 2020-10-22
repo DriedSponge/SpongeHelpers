@@ -19,7 +19,11 @@ var formInit = function (args:Array<any>){
         if(args['loader']['enabled']){
             var loader = document.createElement("div");
             loader.innerHTML = "<div class='loader'></div>"
-            loader.classList.add(args['loader']['theme']);
+            if(args['loader']['theme'] == null){
+                loader.classList.add('loading-cover-dark');
+            }else{
+                loader.classList.add(args['loader']['theme']);
+            }
             loader.classList.add('status');
             if(args['loader']['fullScreen']){
                 let body = document.querySelectorAll('body')[0];
@@ -97,7 +101,7 @@ var formInit = function (args:Array<any>){
                 args['loading'](false);
             }
 
-            if(elm.classList.contains("auto-loading")){
+            if(args['loader']['enabled']){
                 if(args['loader']['destroyLoader']){
                     loader.remove();
                     args['callback'](response);
