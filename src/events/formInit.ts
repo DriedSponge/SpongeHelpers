@@ -13,7 +13,7 @@ var formInit = function (args:Array<any>){
     let elm = this.selected[0];
     elm.addEventListener('submit',function (e){
         e.preventDefault();
-        if(args['loading']!=undefined){
+        if(args['loading']!=null){
             args['loading'](true);
         }
         if(args['loader']['enabled']){
@@ -50,7 +50,7 @@ var formInit = function (args:Array<any>){
         //Loop through each element and if it has a name tag, take the value and add it as part of the submit
         var FData = {}
         ce.forEach((input)=>{
-            if (input.getAttribute('name')!=undefined){
+            if (input.getAttribute('name')!=null){
                 if(input.getAttribute("type")=='checkbox'){
                     //@ts-ignore
                     FData[input.getAttribute('name')]=input.checked;
@@ -60,11 +60,12 @@ var formInit = function (args:Array<any>){
                 }
             }
         })
+
         //If method is set in the args then use it, if it does not exist at all throw error
         var method;
-        if(args['method'] != undefined){
+        if(args['method'] != null){
             method = args['method'];
-        }else if(elm.getAttribute('method')!=undefined){
+        }else if(elm.getAttribute('method')!=null){
             method = elm.getAttribute('method');
         }else{
             return error("Please specify a method for where to send the data!")
@@ -72,9 +73,9 @@ var formInit = function (args:Array<any>){
 
         //If action is set in the args then use it, if it does not exist at all throw error
         var action;
-        if(args['action'] != undefined){
+        if(args['action'] != null){
             action = args['action'];
-        }else if(elm.getAttribute('action')!=undefined){
+        }else if(elm.getAttribute('action')!=null){
             action = elm.getAttribute('action');
         }else{
             return error("Please specify an action for where to send the data!")
@@ -86,12 +87,13 @@ var formInit = function (args:Array<any>){
             url: action,
             data: FData
         })
+        //What happens when the request is complete
         .then(function(response) {
             //Loading has complete
             console.log("%cLoading Complete","color:lime;font-size:14px")
 
             //If we have a function we run while loading, rerun it but tell it we are done loading
-            if(args['loading']!=undefined){
+            if(args['loading']!=null){
                 args['loading'](false);
             }
 
@@ -106,6 +108,7 @@ var formInit = function (args:Array<any>){
                 args['callback'](response);
             }
         })
+        //If there is an error during the request for some reason
         .catch(function (e){
             return error(e);
          });
