@@ -121,9 +121,9 @@ var formInit = function (args:Array<any>){
             }
         })
         //If there is an error during the request for some reason
-        .catch(function (e){
-            return error(e);
-         });
+        // .catch(function (e){
+        //     return error(e);
+        //  });
     });
 };
 SpongeHelpers.prototype.formInit = formInit;

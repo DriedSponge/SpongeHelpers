@@ -41,9 +41,14 @@
     <br>
     <br>
     <br>
+    <script>
+        $(()=>{
+            $('input').attr('value','test');
 
+        })
+    </script>
     <div class="container">
-        <form id="testform" action="http://127.0.0.1:8000/api/test/post" method="post">
+        <form id="testform"  action="http://127.0.0.1:8000/api/test/post" method="post">
             <input class="form-control" name="name">
             <input class="form-control" name="name2">
             <input class="form-control" name="name3">
